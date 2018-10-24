@@ -1,5 +1,10 @@
-node { 
-    stage('Stage 1') {
-        echo 'Hello World55555555' 
+pipeline {
+    agent { docker { image 'node:6.3' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'npm --version'
+            }
+        }
     }
 }
